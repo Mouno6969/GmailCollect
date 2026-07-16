@@ -1,0 +1,8 @@
+# Nightly Gmail Backup via Cron (add with: crontab -e)
+# Runs every day at 2:00 AM server time.
+# The backup_runner.py handles GYB execution and Telegram notification.
+
+0 2 * * * /home/ubuntu/gmail-backup-bot/venv/bin/python /home/ubuntu/gmail-backup-bot/backup_runner.py your@email.com >> /home/ubuntu/gmail-backup-bot/cron.log 2>&1
+
+# For a second account, stagger by 30 minutes:
+# 30 2 * * * /home/ubuntu/gmail-backup-bot/venv/bin/python /home/ubuntu/gmail-backup-bot/backup_runner.py work@email.com >> /home/ubuntu/gmail-backup-bot/cron.log 2>&1

@@ -1,0 +1,19 @@
+[Unit]
+Description=Telegram Gmail Backup Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/gmail-backup-bot
+ExecStart=/home/ubuntu/gmail-backup-bot/venv/bin/python /home/ubuntu/gmail-backup-bot/main.py
+Restart=always
+RestartSec=10
+
+# Security hardening
+ProtectSystem=full
+ReadWritePaths=/home/ubuntu/gmail_backups /home/ubuntu/gmail-backup-bot
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+# Secrets — NEVER commit these
+.env
+*.json
+oauth2.txt
+*.cfg
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Logs and backups
+*.log
+gmail_backups/
